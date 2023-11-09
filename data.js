@@ -98,6 +98,11 @@ const cities = [
       city: 'Madrid',
       temperature: 15,
       forecast: 'Sunny'
+    },
+    {
+      city: 'Not found',
+      temperature: 404,
+      forecast: 'Unknown'
     }
 ];
 

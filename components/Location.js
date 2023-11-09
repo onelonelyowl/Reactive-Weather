@@ -5,16 +5,7 @@ import cloudy from "../assets/Cloudy.svg"
 import partlycloudy from "../assets/PartlyCloudy.svg"
 import rainy from "../assets/Rainy.svg"
 
-function Location({props, location, setLocation}){
-    // function findCurrentCity(){
-        
-    //     // for(const object in cities){
-    //     //     if(object.city === location){
-    //     //         return object
-    //     //     }
-    //     // }
-    //     // throw `couldn't find city matching ${location} in cities array`
-    // }
+function Location({location, setLocation}){
     const currentCity = cities.find((city) => city.city === location)
     let image;
     if(currentCity.forecast === "Sunny"){
