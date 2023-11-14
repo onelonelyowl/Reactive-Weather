@@ -3,12 +3,14 @@ import WeatherCard from './components/WeatherCard';
 import Form from './components/Form.js'
 const cities = require('./data.js')
 import Location from './components/Location.js'
+const dotenv = require('dotenv')
 
 // console.log(cities)
 function App() {
     const [location, setLocation] = useState("London")
     const [currentCity, setCurrentCity] = useState(cities.find((city) => city.city === location))
     const [showError, setShowError] = useState({display: "none"})
+    const [weather, setWeather] = useState({})
     if(currentCity === undefined){
         setCurrentCity({
             city: 'Not found',
@@ -24,9 +26,9 @@ function App() {
                 {cities.map(city => <WeatherCard city={city} />)}
             </div> */}
             <div className = "app">
-                <Form location={location} setLocation={setLocation}/>
+                <Form location={location} setLocation={setLocation} weather={weather} setWeather={setWeather}/>
                 <label className = "error" style={showError}> You have entered an incorrect city! </label>
-                <Location location={location} setLocation={setLocation} />
+                <Location location={location} setLocation={setLocation} weather={weather} setWeather={setWeather} />
             </div>
             
         </>
